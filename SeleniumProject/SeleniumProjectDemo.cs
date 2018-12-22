@@ -39,11 +39,12 @@ namespace SeleniumProject
             IWebElement elementState = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[9]/td[2]/input"));
             IWebElement elementPostalCode = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[10]/td[2]/input"));
             IWebElement elementCountry = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[11]/td[2]/select"));
-            //User info.
             IWebElement elementUsername = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[13]/td[2]/input[@id='email']"));
             IWebElement elementPassword = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td[2]/input"));
             IWebElement elementConfirmPassword = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input"));
-
+            //Submit button
+            IWebElement elementSubmitButton = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[17]/td/input"));
+            
             //Set Elements
             elementFirstname.SendKeys(string.Format("Firstname{0:0000}", randomData));
             elementLastname.SendKeys(string.Format("Lastname{0:0000}", randomData));
@@ -60,6 +61,9 @@ namespace SeleniumProject
             elementUsername.SendKeys(string.Format("Username{0:0000}", randomData));
             elementPassword.SendKeys(string.Format("Password{0:0000}", randomData));
             elementConfirmPassword.SendKeys(string.Format("Password{0:0000}", randomData));
+
+            //Submit Form
+            elementSubmitButton.Click();
 
 
         }
