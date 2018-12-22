@@ -27,7 +27,7 @@ namespace SeleniumProject
         {
             Random random = new Random();
             int randomData = random.Next(10000);
-            string address = string.Format("qa{0:0000}@test.com", randomData);
+
             driver.Url = "http://demo.guru99.com/test/newtours/register.php";
             //Attach Elements
             IWebElement elementFirstname = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td[2]/input"));
@@ -53,7 +53,10 @@ namespace SeleniumProject
             elementCity.SendKeys(string.Format("City{0:0000}", randomData));
             elementState.SendKeys(string.Format("State{0:0000}", randomData));
             elementPostalCode.SendKeys(string.Format("{0:0000}", randomData));
-
+            //select country
+            var selectCountry = new SelectElement(elementCountry);
+            selectCountry.SelectByValue("EGYPT");
+            //User info.
             elementUsername.SendKeys(string.Format("Username{0:0000}", randomData));
             elementPassword.SendKeys(string.Format("Password{0:0000}", randomData));
             elementConfirmPassword.SendKeys(string.Format("Password{0:0000}", randomData));
