@@ -44,6 +44,19 @@ namespace SeleniumProject
             IWebElement elementPassword = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td[2]/input"));
             IWebElement elementConfirmPassword = driver.FindElement(By.XPath("./html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[15]/td[2]/input"));
 
+            //Set Elements
+            elementFirstname.SendKeys(string.Format("Firstname{0:0000}", randomData));
+            elementLastname.SendKeys(string.Format("Lastname{0:0000}", randomData));
+            elementPhone.SendKeys(string.Format("012345{0:0000}", randomData));
+            elementEmail.SendKeys(string.Format("qa{0:0000}@test.com", randomData));
+            elementAddress.SendKeys(string.Format("Address{0:0000}", randomData));
+            elementCity.SendKeys(string.Format("City{0:0000}", randomData));
+            elementState.SendKeys(string.Format("State{0:0000}", randomData));
+            elementPostalCode.SendKeys(string.Format("{0:0000}", randomData));
+
+            elementUsername.SendKeys(string.Format("Username{0:0000}", randomData));
+            elementPassword.SendKeys(string.Format("Password{0:0000}", randomData));
+            elementConfirmPassword.SendKeys(string.Format("Password{0:0000}", randomData));
 
 
         }
